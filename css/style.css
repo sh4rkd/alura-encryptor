@@ -1,7 +1,10 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+:root{
+    --primary: #F3F5FC;
+    --primary-letter: #343A40;
+    --secondary: #FFFFFF;
+    --secondary-letter: #495057;
+    --btn-primary: #0A3871;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -30,6 +33,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
+    background-color: var(--primary);
 }
 ol, ul {
     list-style: none;
@@ -49,4 +53,110 @@ table {
 
 textarea {
     resize: none;
+}
+
+.encrypt-area{
+    width: 20rem;
+    height: 100%;
+    background-color: var(--primary);
+    color: var(--btn-primary);
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+}
+
+.desencrypt-area{
+    width: 15rem;
+    height: 100%;
+    background-color: var(--secondary);
+    color: var(--btn-primary);
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+}
+
+.buttons button{
+    width: 15rem;	
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.text-start{
+    text-align: start;
+}
+
+#desencrypt_area--hidden{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    width: 15rem;
+    height: 25rem;
+    background: var(--secondary);
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.28);
+    border-radius: 32px;
+}
+
+#desencrypt_area--visible{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    width: 15rem;
+    height: 7rem;
+    background: var(--secondary);
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.28);
+    border-radius: 32px;
+}
+
+.center{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.m-auto{
+    margin: auto;
+}
+
+.desencrypt_h2--visible{
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--primary-letter);
+}
+
+.desencrypt_p--visible{
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--secondary-letter);
+}
+
+.btn-primary{
+    background-color: var(--btn-primary);
+    color: var(--secondary);
+    border-radius: 32px;
+    width: 15rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-secondary{
+    background-color: var(--btn-secondary);
+    color: var(--btn-primary);
+    border-radius: 32px;
+    width: 15rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.hidden{
+    visibility: hidden;
 }

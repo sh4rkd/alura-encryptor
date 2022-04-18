@@ -11,29 +11,39 @@
         <!--<MAIN>-->
         <main>
             <object data="media/svg/logo.html"></object>
-            <div>
-                <textarea name="encrypt" id="encrypt" cols="30" rows="10"></textarea>
-                <div>
-                    <object data="media/svg/info.html"></object>
-                    <p>Solo letras minúsculas y sin acentos</p>
+            <div class="center m-auto">
+                <textarea class="text-start encrypt-area" name="encrypt" id="encrypt" cols="30" rows="10" autofocus="" onfocus="this.setSelectionRange(this.value.length,this.value.length);">Ingrese el texto aquí</textarea>
+                <div class="flex center">
+                    <object data="media/svg/info.html" width="32" height="32"></object>
+                    <p class="">Solo letras minúsculas y sin acentos</p>
                 </div>
-                <div>
-                    <button>Encriptar</button>
-                    <button>Desencriptar</button>
+                <div class="flex flex-column buttons">
+                    <button class="m-auto btn-primary" id="btn-encrypt">Encriptar</button>
+                    <button class="m-auto btn-secondary" id="btn-desencrypt">Desencriptar</button>
                 </div>          
-                <div>
-                    <textarea name="desencrypt" id="desencrypt" cols="30" rows="10"></textarea>
-                    <button>Copiar</button>
-                </div>            
+
+                    <div class="m-auto" id="desencrypt_area--visible">
+                        <h2 class="desencrypt_h2--visible m-auto">Ningún mensaje fue encontrado</h2>
+                        <p class="desencrypt_p--visible m-auto">Ingresa el texto que desees encriptar o desencriptar</p>
+                    </div>                    
+
+                <div class="hidden center m-auto" id="desencrypt_area--hidden">
+                    <textarea class="m-auto desencrypt-area" name="desencrypt" id="desencrypt" cols="30" rows="10" readonly></textarea>
+                    <button class="m-auto btn-secondary" id="copy-text">Copiar</button>
+                </div>              
             </div>
         </main>
         <!--</MAIN>-->
         
-        <!--<Footer>-->
+        <!--<FOOTER>-->
         <footer>
-            <p>Diseñado por: Genesys Rondon & Jeanmarie Quijada</p>
-            <p>Programado por: Fred Jiordi Miramontes Arias</p>
+            <p>Designer's: Genesys Rondon & Jeanmarie Quijada</p>
+            <p>Web Development: Fred Jiordi Miramontes Arias</p>
         </footer>
-        <!--</Footer>-->
+        <!--</FOOTER>-->
+
+        <!--<SCRIPTS>-->
+        <script src="js/script.js"></script>
+        <!--</SCRIPTS>-->
     </body>
 </html>
