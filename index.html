@@ -12,14 +12,18 @@
         <main>
             <object data="media/svg/logo.html"></object>
             <div class="center m-auto">
-                <textarea class="text-start encrypt-area" name="encrypt" id="encrypt" cols="30" rows="10" autofocus="" onfocus="this.setSelectionRange(this.value.length,this.value.length);">Ingrese el texto aquí</textarea>
+                <div class="m-auto">
+                    <textarea class="text-start encrypt-area" name="encrypt" id="encrypt" cols="30" rows="10" autofocus="" onfocus="this.setSelectionRange(this.value.length,this.value.length);">Ingrese el texto aquí</textarea>
+                </div>
                 <div class="flex center">
                     <object data="media/svg/info.html" width="32" height="32"></object>
                     <p class="">Solo letras minúsculas y sin acentos</p>
                 </div>
                 <div class="flex flex-column buttons">
-                    <button class="m-auto btn-primary" id="btn-encrypt">Encriptar</button>
-                    <button class="m-auto btn-secondary" id="btn-desencrypt">Desencriptar</button>
+                    <div class="m-auto">
+                        <button class="m-auto btn-primary" id="btn-encrypt">Encriptar</button>
+                        <button class="m-auto btn-secondary" id="btn-desencrypt">Desencriptar</button>
+                    </div>                    
                 </div>          
 
                     <div class="m-auto" id="desencrypt_area--visible">

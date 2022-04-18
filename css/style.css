@@ -160,3 +160,31 @@ textarea {
 .hidden{
     visibility: hidden;
 }
+
+
+@media only screen and (min-width: 570px) {
+    .buttons{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #desencrypt_area--visible{
+        margin-top: 3rem;
+        width: 55%;
+    }
+
+    #desencrypt_area--hidden{
+        margin-top: 3rem;
+        width: 55%;
+    }
+
+    .desencrypt-area{
+        width: 90%;
+        height: 100%;
+    }
+
+    .encrypt-area{
+        width: 50%;
+        height: 100%;
+    }
+}
