@@ -5,49 +5,73 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
-        <title>Alure Encryptor</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>Alura Encryptor</title>
     </head>
     <body>
         <!--<MAIN>-->
-        <main>
-            <object data="media/svg/logo.html"></object>
-            <div class="center m-auto">
-                <div class="m-auto">
-                    <textarea class="text-start encrypt-area" name="encrypt" id="encrypt" cols="30" rows="10" autofocus="" onfocus="this.setSelectionRange(this.value.length,this.value.length);">Ingrese el texto aquí</textarea>
+            <main>
+                <object data="media/svg/logo.html"></object>
+                <label for="language-select" class="option-language">Selecciona un idioma:</label>
+                <select id="language-select">
+                    <option value="0">Spanish</option>
+                    <option value="1">Portuguese</option>
+                    <option value="2">English</option>
+                    <option value="3">French</option>
+                    <option value="4">German</option>
+                    <option value="5">Italian</option>
+                    <option value="6">Japanese</option>
+                    <option value="7">Korean</option>
+                    <option value="8">Russian</option>
+                    <option value="9">Arabic</option>
+                    <option value="10">Chinese</option>
+                </select>
+                  
+                  
+                <div class="d-flex justify-content-evenly">
+                    <div class="">
+                        <div class="">
+                            <textarea class="text-start encrypt-area" name="encrypt" id="encrypt" cols="30" rows="10" autofocus="" onfocus="this.setSelectionRange(this.value.length,this.value.length);">Ingrese el texto aquí</textarea>
+                        </div>
+                        <div class="d-flex justify-content-start">
+                            <object data="media/svg/info.html" width="32" height="32"></object>
+                            <p class="info">Solo letras minúsculas y sin acentos</p>
+                        </div>
+                        <div class="">
+                            <div class="m-auto">
+                                <button class="m-auto btn-primary" id="btn-encrypt">Encriptar</button>
+                                <button class="m-auto btn-secondary" id="btn-desencrypt">Desencriptar</button>
+                            </div>                    
+                        </div>                       
+                    </div>
+                    <div class="">
+                        <div class="" id="desencrypt_area--visible">
+                            <object data="media/svg/character.html" width="500px" height="400px"></object>
+                            <h2 class="desencrypt_h2--visible m-auto">Ningún mensaje fue encontrado</h2>
+                            <p class="desencrypt_p--visible m-auto">Ingresa el texto que desees encriptar o desencriptar</p>
+                        </div>                    
+    
+                    <div class="hidden" id="desencrypt_area--hidden">
+                        <textarea class="m-auto desencrypt-area" name="desencrypt" id="desencrypt" cols="30" rows="10" readonly></textarea>
+                        <button class="m-auto btn-secondary" id="copy-text">Copiar</button>
+                    </div> 
+                    </div>
                 </div>
-                <div class="flex center">
-                    <object data="media/svg/info.html" width="32" height="32"></object>
-                    <p class="">Solo letras minúsculas y sin acentos</p>
-                </div>
-                <div class="flex flex-column buttons">
-                    <div class="m-auto">
-                        <button class="m-auto btn-primary" id="btn-encrypt">Encriptar</button>
-                        <button class="m-auto btn-secondary" id="btn-desencrypt">Desencriptar</button>
-                    </div>                    
-                </div>          
-
-                    <div class="m-auto" id="desencrypt_area--visible">
-                        <h2 class="desencrypt_h2--visible m-auto">Ningún mensaje fue encontrado</h2>
-                        <p class="desencrypt_p--visible m-auto">Ingresa el texto que desees encriptar o desencriptar</p>
-                    </div>                    
-
-                <div class="hidden center m-auto" id="desencrypt_area--hidden">
-                    <textarea class="m-auto desencrypt-area" name="desencrypt" id="desencrypt" cols="30" rows="10" readonly></textarea>
-                    <button class="m-auto btn-secondary" id="copy-text">Copiar</button>
-                </div>              
-            </div>
-        </main>
+            </main>
         <!--</MAIN>-->
         
         <!--<FOOTER>-->
         <footer>
-            <p>Designer's: Genesys Rondon & Jeanmarie Quijada</p>
-            <p>Web Development: Fred Jiordi Miramontes Arias</p>
+            <div class="d-flex justify-content-evenly">
+                <p>Designer's: Genesys Rondon & Jeanmarie Quijada</p>
+                <p>Web Development: Fred Jiordi Miramontes Arias</p>
+            </div>
         </footer>
         <!--</FOOTER>-->
 
         <!--<SCRIPTS>-->
         <script src="js/script.js"></script>
+        <script type="module" src="js/change_language.js"></script>
         <!--</SCRIPTS>-->
     </body>
 </html>

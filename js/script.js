@@ -6,23 +6,18 @@ const secret_keys = {
     "u": "ufat"
 };
 
-encryptText = (text) => {
-    let result = "";
-    text.split("").forEach(letter => {
-        secret_keys[letter] ? result += secret_keys[letter] : result += letter;
-    });
-    return result;
-};
+const encryptText = (text) => {
+    return text.split("").map(letter => secret_keys[letter] || letter).join("");
+  };
+  
 
-desencryptText = (text) => {
-    let result = void(0);
-    for (const key in secret_keys) {
-        if (Object.hasOwnProperty.call(secret_keys, key)) {
-            result = result ? result.replaceAll(secret_keys[key], key) : text.replaceAll(secret_keys[key],key);
-        }
-    }
-    return result;
-}
+  const desencryptText = (text) => {
+    Object.entries(secret_keys).forEach(([key, value]) => {
+      text = text.replaceAll(value, key);
+    });
+    return text;
+  };
+  
 
 document.getElementById("encrypt").addEventListener("click", () => {
     document.getElementById("encrypt").value = "";
@@ -30,11 +25,14 @@ document.getElementById("encrypt").addEventListener("click", () => {
 
 document.getElementById("btn-encrypt").addEventListener("click", () => {
     document.getElementById("desencrypt").value = encryptText(document.getElementById("encrypt").value);
-    document.getElementById("desencrypt_area--hidden").classList.remove("hidden");
-    if (document.getElementById("desencrypt_area--visible")) {
-        document.getElementById("desencrypt_area--visible").remove();
+    const hiddenArea = document.getElementById("desencrypt_area--hidden");
+    hiddenArea.classList.remove("hidden");
+    const visibleArea = document.getElementById("desencrypt_area--visible");
+    if (visibleArea) {
+      visibleArea.parentNode.removeChild(visibleArea);
     }
-});
+  });
+  
 
 document.getElementById("btn-desencrypt").addEventListener("click", () => {
     document.getElementById("desencrypt").value = desencryptText(document.getElementById("encrypt").value);
